@@ -6,6 +6,8 @@ Two five-stage RV32I cores are built from the same base code: a conventional cor
 
 **Author:** Loka Veera Sesha Sai Teja Gantasala, B.Tech ECE, IIIT Sri City
 
+**Tools:** Verilog HDL, Xilinx Vivado 2025.2, Icarus Verilog, EDGE Artix-7 FPGA board (XC7A35T-FTG256)
+
 **Full project report:** [docs/LW_Driven_RV32I_Project_Report.pdf](docs/LW_Driven_RV32I_Project_Report.pdf)
 
 ## Results at a glance
