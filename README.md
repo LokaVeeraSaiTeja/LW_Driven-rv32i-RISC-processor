@@ -4,7 +4,7 @@ An implementation of the load-word (LW) driven bubble mitigation technique from 
 
 Two five-stage RV32I cores are built from the same base code: a conventional core that stalls on every load-use hazard, and a core with the paper's address generator and bubble mitigation control unit. Both are verified in simulation and run on an Artix-7 FPGA (EDGE Artix-7 kit, XC7A35T-FTG256).
 
-**Author:** Loka Veera Sesha Sai Teja Gantasala, B.Tech ECE, IIIT Sri City
+
 
 **Tools:** Verilog HDL, Xilinx Vivado 2025.2, Icarus Verilog, EDGE Artix-7 FPGA board (XC7A35T-FTG256)
 
