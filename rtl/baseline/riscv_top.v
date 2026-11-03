@@ -1,8 +1,6 @@
-// ============================================
-// RISC-V RV32I — Top Level Module (Fully Corrected)
-// Connects all 12 submodules with explicit stage tracking
-// + 2 debug output ports (dbg_pc, dbg_x30) for FPGA LED display
-// ============================================
+
+// RISC-V RV32I — Top Level Module 
+
 module riscv_top (
     input clk,
     input reset,
@@ -10,20 +8,20 @@ module riscv_top (
     output [31:0] dbg_x30
 );
 
-// ── PC wires ──────────────────────────────────
+//  PC wires 
 wire [31:0] pc_current;
 wire [31:0] branch_target;
 wire        branch_taken;
 wire        pc_stall;
 
-// ── Instruction memory wires ──────────────────
+//  Instruction memory wires 
 wire [31:0] instruction;
 
-// ── IF/ID pipeline register wires ─────────────
+//  IF/ID pipeline register wires
 wire [31:0] if_id_pc;
 wire [31:0] if_id_instruction;
 
-// ── Register file wires ───────────────────────
+//  Register file wires 
 wire [4:0]  rs1, rs2;
 wire [31:0] read_data1;
 wire [31:0] read_data2;
@@ -31,7 +29,7 @@ wire [4:0]  wb_rd;
 wire        wb_reg_write;
 wire [31:0] wb_write_data;
 
-// ── ID/EX pipeline register wires ─────────────
+//  ID/EX pipeline register wires
 wire [31:0] id_ex_pc;
 wire [31:0] id_ex_read_data1;
 wire [31:0] id_ex_read_data2;
@@ -47,11 +45,11 @@ wire        id_ex_reg_write;
 wire        id_ex_mem_to_reg;
 wire        id_ex_branch;
 
-// ── EX/MEM pipeline register wires (Stage 3) ──
+//  EX/MEM pipeline register wires (Stage 3) 
 wire [31:0] ex_mem_pc_branch;
 wire        ex_mem_branch;
 wire        ex_mem_zero;
-wire [31:0] ex_mem_alu_result;   // Correct EX/MEM pipeline stage output
+wire [31:0] ex_mem_alu_result;   
 wire [31:0] ex_mem_write_data;
 wire [4:0]  ex_mem_rd;
 wire        ex_mem_mem_read;
@@ -59,35 +57,35 @@ wire        ex_mem_mem_write;
 wire        ex_mem_reg_write;
 wire        ex_mem_mem_to_reg;
 
-// ── MEM/WB pipeline register wires (Stage 4) ──
+//  MEM/WB pipeline register wires (Stage 4) 
 wire [31:0] mem_wb_read_data;
-wire [31:0] mem_wb_alu_result;   // Correct MEM/WB pipeline stage output
+wire [31:0] mem_wb_alu_result;
 wire [4:0]  mem_wb_rd;
 wire        mem_wb_reg_write;
 wire        mem_wb_mem_to_reg;
 
-// ── Data memory wires ─────────────────────────
+//  Data memory wires 
 wire        mem_we;
 wire [31:0] mem_addr;
 wire [31:0] mem_write_data;
 wire [31:0] mem_read_data;
 
-// ── Hazard unit wires ─────────────────────────
+//  Hazard unit wires 
 wire        if_id_stall;
 wire        id_ex_flush;
 wire        if_id_flush;
 
-// ── Forwarding unit wires ─────────────────────
+//  Forwarding unit wires
 wire [1:0]  fwd_a;
 wire [1:0]  fwd_b;
 
-// ── PC select ────────────────────────────────
+//  PC select
 wire        pc_sel = branch_taken;
 
-// ── Debug outputs (FPGA LED display) ─────────
+// Debug outputs
 assign dbg_pc = pc_current;
 
-// ── 1. Program Counter ────────────────────────
+//  1. Program Counter
 pc u_pc (
     .clk        (clk),
     .reset      (reset),
@@ -97,13 +95,13 @@ pc u_pc (
     .pc_out     (pc_current)
 );
 
-// ── 2. Instruction Memory ─────────────────────
+//  2. Instruction Memory 
 instr_mem u_instr_mem (
     .addr        (pc_current),
     .instruction (instruction)
 );
 
-// ── 3. IF Stage + IF/ID Register ─────────────
+//  3. IF Stage + IF/ID Register
 if_stage u_if_stage (
     .clk             (clk),
     .reset           (reset),
@@ -115,7 +113,7 @@ if_stage u_if_stage (
     .if_id_instruction(if_id_instruction)
 );
 
-// ── 4. Register File ──────────────────────────
+//  4. Register File
 register_file u_reg_file (
     .clk        (clk),
     .we         (wb_reg_write),
@@ -128,7 +126,7 @@ register_file u_reg_file (
     .debug_x30  (dbg_x30)
 );
 
-// ── 5. ID Stage + ID/EX Register ─────────────
+//  5. ID Stage + ID/EX Register 
 id_stage u_id_stage (
     .clk              (clk),
     .reset            (reset),
@@ -155,7 +153,7 @@ id_stage u_id_stage (
     .id_ex_branch     (id_ex_branch)
 );
 
-// ── 6. Hazard Detection Unit ──────────────────
+//  6. Hazard Detection Unit
 hazard_unit u_hazard (
     .if_id_rs1      (rs1),
     .if_id_rs2      (rs2),
@@ -168,7 +166,7 @@ hazard_unit u_hazard (
     .if_id_flush    (if_id_flush)
 );
 
-// ── 7. EX Stage + EX/MEM Register ────────────
+//  7. EX Stage + EX/MEM Register 
 ex_stage u_ex_stage (
     .clk                (clk),
     .reset              (reset),
@@ -203,7 +201,7 @@ ex_stage u_ex_stage (
     .ex_rd_out          ()
 );
 
-// ── 8. Forwarding Unit ────────────────────────
+//  8. Forwarding Unit
 forwarding_unit u_fwd (
     .id_ex_rs1        (id_ex_rs1),
     .id_ex_rs2        (id_ex_rs2),
@@ -215,7 +213,7 @@ forwarding_unit u_fwd (
     .fwd_b            (fwd_b)
 );
 
-// ── 9. MEM Stage + MEM/WB Register ───────────
+//  9. MEM Stage + MEM/WB Register 
 mem_stage u_mem_stage (
     .clk               (clk),
     .reset             (reset),
@@ -242,7 +240,7 @@ mem_stage u_mem_stage (
     .mem_wb_mem_to_reg (mem_wb_mem_to_reg)
 );
 
-// ── 10. Data Memory ───────────────────────────
+//  10. Data Memory
 data_mem u_data_mem (
     .clk        (clk),
     .we         (mem_we),
@@ -251,7 +249,7 @@ data_mem u_data_mem (
     .read_data  (mem_read_data)
 );
 
-// ── 11. WB Stage ──────────────────────────────
+//  11. WB Stage 
 wb_stage u_wb_stage (
     .mem_wb_read_data  (mem_wb_read_data),
     .mem_wb_alu_result (mem_wb_alu_result),   // Linked to Stage 4 output
