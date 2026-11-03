@@ -6,6 +6,8 @@ Two five-stage RV32I cores are built from the same base code: a conventional cor
 
 **Author:** Loka Veera Sesha Sai Teja Gantasala, B.Tech ECE, IIIT Sri City
 
+**Full project report:** [docs/LW_Driven_RV32I_Project_Report.pdf](docs/LW_Driven_RV32I_Project_Report.pdf)
+
 ## Results at a glance
 
 | Metric | Baseline (stall) | LW-driven (bubble-free) | Change |
@@ -145,15 +147,19 @@ python3 sweep/run_sweep.py  # full 45-program sweep
 
 **Vivado:** make one project per core. Add `rtl/<core>/*.v` and `fpga/fpga_top.v` as design sources, `fpga/fpga_top.xdc` as a constraint, and one testbench from `sim/testbenches/` as the simulation source. Copy the matching program from `sim/programs/` into the project as `instructions.mem` (the 10-load program for the bubble logs and the FPGA, the Table I program for the waveforms). For synthesis the 10-load program is already built into `instr_mem.v`, so no file path is needed. Set `fpga_top` as top, generate the bitstream and program the board.
 
-## Changes to the base code
+## Fixes and known issues
 
-The base RTL is not my own work: it comes from Saravana Kumar T J A's [32-bit RISC-V processor core](https://github.com/saravana-kumar-T-J-A/32-bit-Risc-V-processor-core). That repository has no license file, so please credit the original author if you reuse it. On top of the bubble mitigation work, I made these fixes in both cores:
+Besides the bubble mitigation work, both cores have these fixes:
 
 - **Register file write-through.** A register read in ID in the same cycle it was written in WB returned the old value. Fixed with a bypass in `reg_file.v`.
 - **Instruction ROM for synthesis.** `$readmemh` with a relative path is not found during Vivado synthesis, which silently gives an empty ROM. `instr_mem.v` now builds the test program in for synthesis and still reads `instructions.mem` in simulation.
 - **Debug outputs.** `riscv_top` exposes the PC and register x30 to the FPGA wrapper.
 
-Three known issues remain in the base code and are worked around rather than fixed: branches ignore funct3 (every branch behaves like `beq`), `jal` is not decoded, and a taken branch flushes only two of the three wrong-path instructions. The sweep therefore uses unrolled loops instead of branches.
+Three known issues remain in the pipeline and are worked around rather than fixed: branches ignore funct3 (every branch behaves like `beq`), `jal` is not decoded, and a taken branch flushes only two of the three wrong-path instructions. The sweep therefore uses unrolled loops instead of branches.
+
+## Acknowledgement
+
+The base five-stage RV32I pipeline is adapted from [Saravana Kumar T J A's open-source core](https://github.com/saravana-kumar-T-J-A/32-bit-Risc-V-processor-core).
 
 ## Reference
 
