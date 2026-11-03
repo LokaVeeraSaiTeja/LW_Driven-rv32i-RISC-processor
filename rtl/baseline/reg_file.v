@@ -1,9 +1,7 @@
-// ============================================
+
 // Register File — 32 x 32-bit registers
-// 2 async read ports, 1 sync write port
-// x0 is hardwired to zero (RISC-V rule)
-// + 1 extra always-on debug read port (x30), for FPGA LED display
-// ============================================
+
+
 module register_file (
     input         clk,
     input         we,          // Write Enable (from WB stage)
@@ -19,7 +17,7 @@ module register_file (
     // 32 registers, each 32 bits wide
     reg [31:0] regs [0:31];
 
-    // Initialize all registers to 0 at start (for simulation)
+    // Initialize all registers to 0 at start 
     integer i;
     initial begin
         for (i = 0; i < 32; i = i + 1)
@@ -33,11 +31,7 @@ module register_file (
             regs[rd] <= write_data;
     end
 
-    // Asynchronous read — combinational, no clock needed
-    // x0 always returns 0
-    // Write-through bypass: if WB is writing the same register this
-    // cycle, return the new value (otherwise the instruction in ID
-    // reads the stale value -- bug in the original repo).
+   
     assign read_data1 = (rs1 == 5'd0) ? 32'd0 :
                         (we && rd == rs1) ? write_data : regs[rs1];
     assign read_data2 = (rs2 == 5'd0) ? 32'd0 :
