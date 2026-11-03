@@ -1,0 +1,7 @@
+sim/build/
+sweep/build/
+__pycache__/
+*.vcd
+*.jou
+*.log
+.Xil/

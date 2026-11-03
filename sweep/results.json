@@ -1,0 +1,812 @@
+[
+  {
+    "ex": 1,
+    "mix": [
+      "C1",
+      "C1",
+      "C1",
+      "C1",
+      "C1"
+    ],
+    "iter": 1,
+    "tech": "stall",
+    "file": "ex1_it1_stall.mem",
+    "sentinel": 56,
+    "design": "baseline",
+    "cycles": 18,
+    "x29": 111,
+    "x30": 112
+  },
+  {
+    "ex": 1,
+    "mix": [
+      "C1",
+      "C1",
+      "C1",
+      "C1",
+      "C1"
+    ],
+    "iter": 1,
+    "tech": "reorder",
+    "file": "ex1_it1_reorder.mem",
+    "sentinel": 76,
+    "design": "baseline",
+    "cycles": 19,
+    "x29": 111,
+    "x30": 112
+  },
+  {
+    "ex": 1,
+    "mix": [
+      "C1",
+      "C1",
+      "C1",
+      "C1",
+      "C1"
+    ],
+    "iter": 1,
+    "tech": "bubblefree",
+    "file": "ex1_it1_bubblefree.mem",
+    "sentinel": 56,
+    "design": "bubblefree",
+    "cycles": 15,
+    "x29": 111,
+    "x30": 112
+  },
+  {
+    "ex": 1,
+    "mix": [
+      "C1",
+      "C1",
+      "C1",
+      "C1",
+      "C1"
+    ],
+    "iter": 2,
+    "tech": "stall",
+    "file": "ex1_it2_stall.mem",
+    "sentinel": 96,
+    "design": "baseline",
+    "cycles": 33,
+    "x29": 111,
+    "x30": 112
+  },
+  {
+    "ex": 1,
+    "mix": [
+      "C1",
+      "C1",
+      "C1",
+      "C1",
+      "C1"
+    ],
+    "iter": 2,
+    "tech": "reorder",
+    "file": "ex1_it2_reorder.mem",
+    "sentinel": 136,
+    "design": "baseline",
+    "cycles": 34,
+    "x29": 111,
+    "x30": 112
+  },
+  {
+    "ex": 1,
+    "mix": [
+      "C1",
+      "C1",
+      "C1",
+      "C1",
+      "C1"
+    ],
+    "iter": 2,
+    "tech": "bubblefree",
+    "file": "ex1_it2_bubblefree.mem",
+    "sentinel": 96,
+    "design": "bubblefree",
+    "cycles": 25,
+    "x29": 111,
+    "x30": 112
+  },
+  {
+    "ex": 1,
+    "mix": [
+      "C1",
+      "C1",
+      "C1",
+      "C1",
+      "C1"
+    ],
+    "iter": 3,
+    "tech": "stall",
+    "file": "ex1_it3_stall.mem",
+    "sentinel": 136,
+    "design": "baseline",
+    "cycles": 48,
+    "x29": 111,
+    "x30": 112
+  },
+  {
+    "ex": 1,
+    "mix": [
+      "C1",
+      "C1",
+      "C1",
+      "C1",
+      "C1"
+    ],
+    "iter": 3,
+    "tech": "reorder",
+    "file": "ex1_it3_reorder.mem",
+    "sentinel": 196,
+    "design": "baseline",
+    "cycles": 49,
+    "x29": 111,
+    "x30": 112
+  },
+  {
+    "ex": 1,
+    "mix": [
+      "C1",
+      "C1",
+      "C1",
+      "C1",
+      "C1"
+    ],
+    "iter": 3,
+    "tech": "bubblefree",
+    "file": "ex1_it3_bubblefree.mem",
+    "sentinel": 136,
+    "design": "bubblefree",
+    "cycles": 35,
+    "x29": 111,
+    "x30": 112
+  },
+  {
+    "ex": 2,
+    "mix": [
+      "C1",
+      "C1",
+      "C1",
+      "C2",
+      "C2"
+    ],
+    "iter": 1,
+    "tech": "stall",
+    "file": "ex2_it1_stall.mem",
+    "sentinel": 72,
+    "design": "baseline",
+    "cycles": 22,
+    "x29": 0,
+    "x30": 1
+  },
+  {
+    "ex": 2,
+    "mix": [
+      "C1",
+      "C1",
+      "C1",
+      "C2",
+      "C2"
+    ],
+    "iter": 1,
+    "tech": "reorder",
+    "file": "ex2_it1_reorder.mem",
+    "sentinel": 92,
+    "design": "baseline",
+    "cycles": 23,
+    "x29": 0,
+    "x30": 1
+  },
+  {
+    "ex": 2,
+    "mix": [
+      "C1",
+      "C1",
+      "C1",
+      "C2",
+      "C2"
+    ],
+    "iter": 1,
+    "tech": "bubblefree",
+    "file": "ex2_it1_bubblefree.mem",
+    "sentinel": 72,
+    "design": "bubblefree",
+    "cycles": 19,
+    "x29": 0,
+    "x30": 1
+  },
+  {
+    "ex": 2,
+    "mix": [
+      "C1",
+      "C1",
+      "C1",
+      "C2",
+      "C2"
+    ],
+    "iter": 2,
+    "tech": "stall",
+    "file": "ex2_it2_stall.mem",
+    "sentinel": 128,
+    "design": "baseline",
+    "cycles": 41,
+    "x29": 0,
+    "x30": 1
+  },
+  {
+    "ex": 2,
+    "mix": [
+      "C1",
+      "C1",
+      "C1",
+      "C2",
+      "C2"
+    ],
+    "iter": 2,
+    "tech": "reorder",
+    "file": "ex2_it2_reorder.mem",
+    "sentinel": 168,
+    "design": "baseline",
+    "cycles": 42,
+    "x29": 0,
+    "x30": 1
+  },
+  {
+    "ex": 2,
+    "mix": [
+      "C1",
+      "C1",
+      "C1",
+      "C2",
+      "C2"
+    ],
+    "iter": 2,
+    "tech": "bubblefree",
+    "file": "ex2_it2_bubblefree.mem",
+    "sentinel": 128,
+    "design": "bubblefree",
+    "cycles": 33,
+    "x29": 0,
+    "x30": 1
+  },
+  {
+    "ex": 2,
+    "mix": [
+      "C1",
+      "C1",
+      "C1",
+      "C2",
+      "C2"
+    ],
+    "iter": 3,
+    "tech": "stall",
+    "file": "ex2_it3_stall.mem",
+    "sentinel": 184,
+    "design": "baseline",
+    "cycles": 60,
+    "x29": 0,
+    "x30": 1
+  },
+  {
+    "ex": 2,
+    "mix": [
+      "C1",
+      "C1",
+      "C1",
+      "C2",
+      "C2"
+    ],
+    "iter": 3,
+    "tech": "reorder",
+    "file": "ex2_it3_reorder.mem",
+    "sentinel": 244,
+    "design": "baseline",
+    "cycles": 61,
+    "x29": 0,
+    "x30": 1
+  },
+  {
+    "ex": 2,
+    "mix": [
+      "C1",
+      "C1",
+      "C1",
+      "C2",
+      "C2"
+    ],
+    "iter": 3,
+    "tech": "bubblefree",
+    "file": "ex2_it3_bubblefree.mem",
+    "sentinel": 184,
+    "design": "bubblefree",
+    "cycles": 47,
+    "x29": 0,
+    "x30": 1
+  },
+  {
+    "ex": 3,
+    "mix": [
+      "C1",
+      "C1",
+      "C2",
+      "C2",
+      "C3"
+    ],
+    "iter": 1,
+    "tech": "stall",
+    "file": "ex3_it1_stall.mem",
+    "sentinel": 76,
+    "design": "baseline",
+    "cycles": 23,
+    "x29": 111,
+    "x30": 112
+  },
+  {
+    "ex": 3,
+    "mix": [
+      "C1",
+      "C1",
+      "C2",
+      "C2",
+      "C3"
+    ],
+    "iter": 1,
+    "tech": "reorder",
+    "file": "ex3_it1_reorder.mem",
+    "sentinel": 96,
+    "design": "baseline",
+    "cycles": 24,
+    "x29": 111,
+    "x30": 112
+  },
+  {
+    "ex": 3,
+    "mix": [
+      "C1",
+      "C1",
+      "C2",
+      "C2",
+      "C3"
+    ],
+    "iter": 1,
+    "tech": "bubblefree",
+    "file": "ex3_it1_bubblefree.mem",
+    "sentinel": 76,
+    "design": "bubblefree",
+    "cycles": 21,
+    "x29": 111,
+    "x30": 112
+  },
+  {
+    "ex": 3,
+    "mix": [
+      "C1",
+      "C1",
+      "C2",
+      "C2",
+      "C3"
+    ],
+    "iter": 2,
+    "tech": "stall",
+    "file": "ex3_it2_stall.mem",
+    "sentinel": 136,
+    "design": "baseline",
+    "cycles": 43,
+    "x29": 111,
+    "x30": 112
+  },
+  {
+    "ex": 3,
+    "mix": [
+      "C1",
+      "C1",
+      "C2",
+      "C2",
+      "C3"
+    ],
+    "iter": 2,
+    "tech": "reorder",
+    "file": "ex3_it2_reorder.mem",
+    "sentinel": 176,
+    "design": "baseline",
+    "cycles": 44,
+    "x29": 111,
+    "x30": 112
+  },
+  {
+    "ex": 3,
+    "mix": [
+      "C1",
+      "C1",
+      "C2",
+      "C2",
+      "C3"
+    ],
+    "iter": 2,
+    "tech": "bubblefree",
+    "file": "ex3_it2_bubblefree.mem",
+    "sentinel": 136,
+    "design": "bubblefree",
+    "cycles": 37,
+    "x29": 111,
+    "x30": 112
+  },
+  {
+    "ex": 3,
+    "mix": [
+      "C1",
+      "C1",
+      "C2",
+      "C2",
+      "C3"
+    ],
+    "iter": 3,
+    "tech": "stall",
+    "file": "ex3_it3_stall.mem",
+    "sentinel": 196,
+    "design": "baseline",
+    "cycles": 63,
+    "x29": 111,
+    "x30": 112
+  },
+  {
+    "ex": 3,
+    "mix": [
+      "C1",
+      "C1",
+      "C2",
+      "C2",
+      "C3"
+    ],
+    "iter": 3,
+    "tech": "reorder",
+    "file": "ex3_it3_reorder.mem",
+    "sentinel": 256,
+    "design": "baseline",
+    "cycles": 64,
+    "x29": 111,
+    "x30": 112
+  },
+  {
+    "ex": 3,
+    "mix": [
+      "C1",
+      "C1",
+      "C2",
+      "C2",
+      "C3"
+    ],
+    "iter": 3,
+    "tech": "bubblefree",
+    "file": "ex3_it3_bubblefree.mem",
+    "sentinel": 196,
+    "design": "bubblefree",
+    "cycles": 53,
+    "x29": 111,
+    "x30": 112
+  },
+  {
+    "ex": 4,
+    "mix": [
+      "C1",
+      "C1",
+      "C1",
+      "C1",
+      "C3"
+    ],
+    "iter": 1,
+    "tech": "stall",
+    "file": "ex4_it1_stall.mem",
+    "sentinel": 60,
+    "design": "baseline",
+    "cycles": 19,
+    "x29": 111,
+    "x30": 112
+  },
+  {
+    "ex": 4,
+    "mix": [
+      "C1",
+      "C1",
+      "C1",
+      "C1",
+      "C3"
+    ],
+    "iter": 1,
+    "tech": "reorder",
+    "file": "ex4_it1_reorder.mem",
+    "sentinel": 80,
+    "design": "baseline",
+    "cycles": 20,
+    "x29": 111,
+    "x30": 112
+  },
+  {
+    "ex": 4,
+    "mix": [
+      "C1",
+      "C1",
+      "C1",
+      "C1",
+      "C3"
+    ],
+    "iter": 1,
+    "tech": "bubblefree",
+    "file": "ex4_it1_bubblefree.mem",
+    "sentinel": 60,
+    "design": "bubblefree",
+    "cycles": 17,
+    "x29": 111,
+    "x30": 112
+  },
+  {
+    "ex": 4,
+    "mix": [
+      "C1",
+      "C1",
+      "C1",
+      "C1",
+      "C3"
+    ],
+    "iter": 2,
+    "tech": "stall",
+    "file": "ex4_it2_stall.mem",
+    "sentinel": 104,
+    "design": "baseline",
+    "cycles": 35,
+    "x29": 111,
+    "x30": 112
+  },
+  {
+    "ex": 4,
+    "mix": [
+      "C1",
+      "C1",
+      "C1",
+      "C1",
+      "C3"
+    ],
+    "iter": 2,
+    "tech": "reorder",
+    "file": "ex4_it2_reorder.mem",
+    "sentinel": 144,
+    "design": "baseline",
+    "cycles": 36,
+    "x29": 111,
+    "x30": 112
+  },
+  {
+    "ex": 4,
+    "mix": [
+      "C1",
+      "C1",
+      "C1",
+      "C1",
+      "C3"
+    ],
+    "iter": 2,
+    "tech": "bubblefree",
+    "file": "ex4_it2_bubblefree.mem",
+    "sentinel": 104,
+    "design": "bubblefree",
+    "cycles": 29,
+    "x29": 111,
+    "x30": 112
+  },
+  {
+    "ex": 4,
+    "mix": [
+      "C1",
+      "C1",
+      "C1",
+      "C1",
+      "C3"
+    ],
+    "iter": 3,
+    "tech": "stall",
+    "file": "ex4_it3_stall.mem",
+    "sentinel": 148,
+    "design": "baseline",
+    "cycles": 51,
+    "x29": 111,
+    "x30": 112
+  },
+  {
+    "ex": 4,
+    "mix": [
+      "C1",
+      "C1",
+      "C1",
+      "C1",
+      "C3"
+    ],
+    "iter": 3,
+    "tech": "reorder",
+    "file": "ex4_it3_reorder.mem",
+    "sentinel": 208,
+    "design": "baseline",
+    "cycles": 52,
+    "x29": 111,
+    "x30": 112
+  },
+  {
+    "ex": 4,
+    "mix": [
+      "C1",
+      "C1",
+      "C1",
+      "C1",
+      "C3"
+    ],
+    "iter": 3,
+    "tech": "bubblefree",
+    "file": "ex4_it3_bubblefree.mem",
+    "sentinel": 148,
+    "design": "bubblefree",
+    "cycles": 41,
+    "x29": 111,
+    "x30": 112
+  },
+  {
+    "ex": 5,
+    "mix": [
+      "C1",
+      "C1",
+      "C2",
+      "C2",
+      "C2"
+    ],
+    "iter": 1,
+    "tech": "stall",
+    "file": "ex5_it1_stall.mem",
+    "sentinel": 80,
+    "design": "baseline",
+    "cycles": 24,
+    "x29": 0,
+    "x30": 1
+  },
+  {
+    "ex": 5,
+    "mix": [
+      "C1",
+      "C1",
+      "C2",
+      "C2",
+      "C2"
+    ],
+    "iter": 1,
+    "tech": "reorder",
+    "file": "ex5_it1_reorder.mem",
+    "sentinel": 100,
+    "design": "baseline",
+    "cycles": 25,
+    "x29": 0,
+    "x30": 1
+  },
+  {
+    "ex": 5,
+    "mix": [
+      "C1",
+      "C1",
+      "C2",
+      "C2",
+      "C2"
+    ],
+    "iter": 1,
+    "tech": "bubblefree",
+    "file": "ex5_it1_bubblefree.mem",
+    "sentinel": 80,
+    "design": "bubblefree",
+    "cycles": 21,
+    "x29": 0,
+    "x30": 1
+  },
+  {
+    "ex": 5,
+    "mix": [
+      "C1",
+      "C1",
+      "C2",
+      "C2",
+      "C2"
+    ],
+    "iter": 2,
+    "tech": "stall",
+    "file": "ex5_it2_stall.mem",
+    "sentinel": 144,
+    "design": "baseline",
+    "cycles": 45,
+    "x29": 0,
+    "x30": 1
+  },
+  {
+    "ex": 5,
+    "mix": [
+      "C1",
+      "C1",
+      "C2",
+      "C2",
+      "C2"
+    ],
+    "iter": 2,
+    "tech": "reorder",
+    "file": "ex5_it2_reorder.mem",
+    "sentinel": 184,
+    "design": "baseline",
+    "cycles": 46,
+    "x29": 0,
+    "x30": 1
+  },
+  {
+    "ex": 5,
+    "mix": [
+      "C1",
+      "C1",
+      "C2",
+      "C2",
+      "C2"
+    ],
+    "iter": 2,
+    "tech": "bubblefree",
+    "file": "ex5_it2_bubblefree.mem",
+    "sentinel": 144,
+    "design": "bubblefree",
+    "cycles": 37,
+    "x29": 0,
+    "x30": 1
+  },
+  {
+    "ex": 5,
+    "mix": [
+      "C1",
+      "C1",
+      "C2",
+      "C2",
+      "C2"
+    ],
+    "iter": 3,
+    "tech": "stall",
+    "file": "ex5_it3_stall.mem",
+    "sentinel": 208,
+    "design": "baseline",
+    "cycles": 66,
+    "x29": 0,
+    "x30": 1
+  },
+  {
+    "ex": 5,
+    "mix": [
+      "C1",
+      "C1",
+      "C2",
+      "C2",
+      "C2"
+    ],
+    "iter": 3,
+    "tech": "reorder",
+    "file": "ex5_it3_reorder.mem",
+    "sentinel": 268,
+    "design": "baseline",
+    "cycles": 67,
+    "x29": 0,
+    "x30": 1
+  },
+  {
+    "ex": 5,
+    "mix": [
+      "C1",
+      "C1",
+      "C2",
+      "C2",
+      "C2"
+    ],
+    "iter": 3,
+    "tech": "bubblefree",
+    "file": "ex5_it3_bubblefree.mem",
+    "sentinel": 208,
+    "design": "bubblefree",
+    "cycles": 53,
+    "x29": 0,
+    "x30": 1
+  }
+]
